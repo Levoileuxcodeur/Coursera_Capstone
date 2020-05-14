@@ -1,12 +1,12 @@
 # Coursera_Capstone
 # Introduction
-A description of the problem and a discussion of the background.
+
 I want to create a tool that will allow users to define what they like in their neighborhoods and find similar neighborhoods in an other city. Factors could be: proximity to parcs, grocery stores, bakery and butcher shops, access to public transit and commute time by car to their favorite getaway location or workplace.
 
 This idea is based on my dream to one day move from where I live to an other city and be able to find a neighborhood that match my lifestyle.
 
 # Data
-A description of the data and how it will be used to solve the problem.
+
 I plan to use the following sources to gather data:  
 
 -Wikipedia pages regarding neighbordhood description (I plan to take two or three cities to start with)  
