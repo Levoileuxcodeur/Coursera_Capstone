@@ -7,7 +7,13 @@ This idea is based on my dream to one day move from where I live to an other cit
 
 # Data
 A description of the data and how it will be used to solve the problem.
-I plan to use the following sources to gather data:  -Wikipedia pages regarding neighbordhood description (I plan to take two or three cities to start with)  -Foursquare data regarding venues of each neighborhoods   -Google maps api regarding drive time
+I plan to use the following sources to gather data:  
+
+-Wikipedia pages regarding neighbordhood description (I plan to take two or three cities to start with)  
+
+-Foursquare data regarding venues of each neighborhoods   
+
+-Google maps api regarding drive time
 
 I want to show the user what kind of venues their neighborhood has and ask him to identify which ones (or types) make them love it the most.
 
