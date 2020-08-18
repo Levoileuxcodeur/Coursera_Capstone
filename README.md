@@ -30,8 +30,6 @@ For each neighboroods, I then acquire all venues within a 500 meters radius of t
 
 # Methodology
 
-where you discuss and describe any exploratory data analysis that you did, any inferential statistical testing that you performed, if any, and what machine learnings were used and why.
-
 I want the user to identify the neighborhoods they enjoy the most in Montreal and present choices of similar neighborhoods in Vancouver. To do that, I use two methods to come up with recommendations: a K-means clustering algorithm and a Content-based recommendation algorithm.
 
 K-Means clustering:
@@ -45,7 +43,9 @@ Another interesting point is the K, or number of clusters, that I decided to use
 
 Content-based recommender:
 
+This algorithm is meant to present the user "more of the same what I've liked before", which is exactly what I want to do in this project. 
 
+To do so, I start by asking the user 
 
 # Results
 
