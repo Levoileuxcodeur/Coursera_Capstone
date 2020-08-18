@@ -40,7 +40,7 @@ This Machine Learning method is unsupervised and meant to cluster data. In this 
 
 For each neighborhoods, I used the numbers of venues in each of the five venues categories to do the clustering excercice. It is interesting to understant that I decided to trim down the number of categories from approximately two hundred to five because the K-means algorithm was not able to produce clusters that objectively makes sens from my opinion, given the fact that I know Montreal and Vancouver quite well. With only five venue categories, I am asking the algorithm work with a five dimensions matrix, much easier than with two hundred dimension matrix.
 
-Another interesting point is the K, or number of clusters, that I decided to used. I played with several number, ranging between four and twelve. Ultimatatly, I settled for a K of 8. To do so, I looked at the 
+Another interesting point is the K, or number of clusters, that I decided to use. I played with several numbers, ranging between four and twelve. Ultimatatly, I settled for a K of 8. To do so, I looked at tables of each cluster with each tables showing the most common venues by order. I also looked at spider plots showing for each cluster the average number of venues by category. The spider plots were especially useful because they would show the distribution amongst each categories but also the density of each venues. 
 
 
 Content-based recommender:
