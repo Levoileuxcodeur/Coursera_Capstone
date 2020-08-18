@@ -32,7 +32,7 @@ For each neighboroods, I then acquire all venues within a 500 meters radius of t
 
 I want the user to identify the neighborhoods they enjoy the most in Montreal and present choices of similar neighborhoods in Vancouver. To do that, I use two methods to come up with recommendations: a K-means clustering algorithm and a Content-based recommendation algorithm.
 
-K-Means clustering:
+## K-Means clustering:
 
 This Machine Learning method is unsupervised and meant to cluster data. In this method, the user decides on the number of clusters to divide the data into. The algorithm then assigns cluster centroids randomly and assign each data entry to a cluster. Calculating the distance between each point of a given cluster and the centroid of the cluster, the algorithm then moves the centroid. The algorithm loops until the centroids do not move.
 
