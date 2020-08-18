@@ -1,5 +1,6 @@
 # Coursera_Capstone
 # Introduction
+Introduction where you discuss the business problem and who would be interested in this project.
 
 When moving to a new city, it is difficult to identify which neighborhood suits our needs without already having spent some time in the city.
 
@@ -10,6 +11,7 @@ Typical factors will be amount of: Arts & Entertainment, Food shop, Shop and Ser
 This idea is based on my dream to one day move from where I live to another city and be able to find a neighborhood that match my lifestyle.
 
 # Data
+Data where you describe the data that will be used to solve the problem and the source of the data.
 
 For this study, I am comparing Montreal and Vancouver, two canadian cities.
 
@@ -29,10 +31,11 @@ I then plot the neighborhoods on maps using Folium to ensure the accuracy of the
 For each neighboroods, I then acquire all venues within a 500 meters radius of their center using the Foursquare Search Venues API. I finally change each venue category to fit within the five top categories defined by Foursquare: Arts & Entertainment, Food shop, Shop and Service, Outdoor & Recreation & Nightlife Spot.
 
 # Methodology
+Methodology section which represents the main component of the report where you discuss and describe any exploratory data analysis that you did, any inferential statistical testing that you performed, if any, and what machine learnings were used and why.
 
 I want the user to identify the neighborhoods they enjoy the most in Montreal and present choices of similar neighborhoods in Vancouver. To do that, I use two methods to come up with recommendations: a K-means clustering algorithm and a Content-based recommendation algorithm.
 
-## K-Means clustering:
+#### K-Means clustering:
 
 This Machine Learning method is unsupervised and meant to cluster data. In this method, the user decides on the number of clusters to divide the data into. The algorithm then assigns cluster centroids randomly and assign each data entry to a cluster. Calculating the distance between each point of a given cluster and the centroid of the cluster, the algorithm then moves the centroid. The algorithm loops until the centroids do not move.
 
@@ -41,14 +44,19 @@ For each neighborhoods, I used the numbers of venues in each of the five venues 
 Another interesting point is the K, or number of clusters, that I decided to use. I played with several numbers, ranging between four and twelve. Ultimatatly, I settled for a K of 8. To do so, I looked at tables of each cluster with each tables showing the most common venues by order. I also looked at spider plots showing for each cluster the average number of venues by category. The spider plots were especially useful because they would show the distribution amongst each categories but also the density of each venues. I also made sure that each cluster had roughly a 50/50 distribution in terms of Montreal and Vancouver neighborhoods.
 
 
-Content-based recommender:
+#### Content-based recommender:
 
 This algorithm is meant to present the user "more of the same what I've liked before", which is exactly what I want to do in this project. 
 
-To do so, I start by asking the user in which Montreal neighbordhoods he would live, in which he is ambivalent and in which he would not live. He needs to assign a number of either 2, 1 or 0 respectively. I chose a neighborhood by cluster (defined above) to ensure a  
+To do so, I start by asking the user in which Montreal neighbordhoods he would live, in which he is ambivalent and in which he would not live. He needs to assign a number of either 2, 1 or 0 respectively. In the previous algorithm - K-Means clustering - I have 8 clusters. I then choose a neighborhood by cluster (defined above) to build my user profile matrix.
+
+
 
 # Results
 
+Results section where you discuss the results.
 # Discussion
-
+Discussion section where you discuss any observations you noted and any recommendations you can make based on the results.
 # Conclusion
+Conclusion section where you conclude the report.
+
