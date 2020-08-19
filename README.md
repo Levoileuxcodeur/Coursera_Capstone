@@ -48,10 +48,15 @@ Another interesting point is the K, or number of clusters, that I decided to use
 
 This algorithm is meant to present the user "more of the same what I've liked before", which is exactly what I want to do in this project. 
 
-To do so, I start by asking the user in which Montreal neighbordhoods he would live, in which he is ambivalent and in which he would not live. He needs to assign a number of either 2, 1 or 0 respectively. Each neighborhood chosen is in a different cluster, defined in the previous section.
+To do so, I start by asking the user in which Montreal neighbordhoods he would live in. He needs to assign a number between 10 and 0 depending if he is positive or negative about living in the neighborhood. Each neighborhood chosen is in a different cluster, defined in the previous section. The info is filed in the user input matrix.
 
+As a second step, I prepare the neighborhood matrix. This consists of gathering the number of venues by category for each of the nine neighborhoods previously chosen.
 
+The weighted category matrix is obtained by multiplying the user input matrix (Hadamard product) to the neighborhood matrix. This matrix shows the interest of the user about the different type of venue categories.
 
+The user profile matrix is obtained by simply summing the columns content then normalizing numbers.
+
+Next step consists of finding the recommendations, which are the best Vancouver neighborhoods based on the user preferences. To do that, I obtain a matrix of Vancouver neighborhoods with the sum of venues by categories. I then multilply this matrix to the user profile matrix (Hadamard product) and sum each row. The row with the highest value represents the neighborhood that theoritically best suits the user's preferences.
 
 
 # Results
