@@ -31,39 +31,61 @@ I then plot the neighborhoods on maps using Folium to ensure the accuracy of the
 For each neighboroods, I then acquire all venues within a 500 meters radius of their center using the Foursquare Search Venues API. I finally change each venue category to fit within the five top categories defined by Foursquare: Arts & Entertainment, Food shop, Shop and Service, Outdoor & Recreation & Nightlife Spot.
 
 # Methodology
-Methodology section which represents the main component of the report where you discuss and describe any exploratory data analysis that you did, any inferential statistical testing that you performed, if any, and what machine learnings were used and why.
 
 I want the user to identify the neighborhoods they enjoy the most in Montreal and present choices of similar neighborhoods in Vancouver. To do that, I use two methods to come up with recommendations: a K-means clustering algorithm and a Content-based recommendation algorithm.
 
 #### K-Means clustering:
 
-This Machine Learning method is unsupervised and meant to cluster data. In this method, the user decides on the number of clusters to divide the data into. The algorithm then assigns cluster centroids randomly and assign each data entry to a cluster. Calculating the distance between each point of a given cluster and the centroid of the cluster, the algorithm then moves the centroid. The algorithm loops until the centroids do not move.
+This Machine Learning method is unsupervised and meant to cluster data. In this method, the user decides on the number of clusters to divide the data into. The algorithm then assigns cluster centroids randomly and assign each data entry to a cluster. Calculating the distance between each point of a given cluster and the centroid of the cluster, the algorithm then moves the centroid. The algorithm loops until the centroids do not move anymore.
 
-For each neighborhoods, I started by ordering the most common to least common categories of venues. It is interesting to understand that I decided to trim down the number of categories from approximately two hundred to five because the K-means algorithm was not able to produce clusters that objectively makes sens from my opinion, given the fact that I know Montreal and Vancouver quite well. With only five venue categories, I am asking the algorithm to work with a five dimensions matrix, much easier than with two hundred dimension matrix. I initially tried to cluster the neighborhood by asking K-means to look only at the number of venues in each of the five categories. It did not yield results as convicing as clustering with most common to least common category type. 
+For each neighborhoods, I started by ordering the most common to least common categories of venues. It is interesting to understand that I decided to trim down the number of categories from approximately two hundred to five because the K-means algorithm was not able to produce clusters that objectively makes sens from my opinion, given the fact that I know Montreal and Vancouver quite well. With only five venue categories, I am asking the algorithm to work with a five dimensions matrix, which is much easier than with a two hundred dimension matrix. I initially tried to cluster the neighborhood by asking K-means to look only at the number of venues in each of the five categories. It did not yield results as convicing as clustering with most common to least common category type. 
 
-Another interesting point is the K, or number of clusters, that I decided to use. I played with several numbers, ranging between four and twelve. Ultimatatly, I settled for a K of 9. To do so, I looked at tables of each cluster with each tables showing the most common venues by order.
+Another interesting point is the K, or number of clusters, that I decided to use. I played with several numbers, ranging between four and twelve. Ultimately, I settled for a K of nine. To do so, I looked at tables of each cluster with each tables showing the most common venues by order. With a value of nine, each table looks composed of similar neighborhoods.
 
 
 #### Content-based recommender:
 
 This algorithm is meant to present the user "more of the same what I've liked before", which is exactly what I want to do in this project. 
 
-To do so, I start by asking the user in which Montreal neighbordhoods he would live in. He needs to assign a number between 10 and 0 depending if he is positive or negative about living in the neighborhood. Each neighborhood chosen is in a different cluster, defined in the previous section. The info is filed in the user input matrix.
+To do so, I started by asking the user in which Montreal neighbordhoods he would live in, or not. He needed to assign a number between 2 and 0 depending if he is positive, ambivalent or negative about living in the neighborhood. The info is filed in the user input matrix.
 
-As a second step, I prepare the neighborhood matrix. This consists of gathering the number of venues by category for each of the nine neighborhoods previously chosen.
+As a second step, I prepared the neighborhood matrix. This consists of gathering the number of venues by category for each of the nine neighborhoods previously chosen.
 
 The weighted category matrix is obtained by multiplying the user input matrix (Hadamard product) to the neighborhood matrix. This matrix shows the interest of the user about the different type of venue categories.
 
 The user profile matrix is obtained by simply summing the columns content then normalizing numbers.
 
-Next step consists of finding the recommendations, which are the best Vancouver neighborhoods based on the user preferences. To do that, I obtain a matrix of Vancouver neighborhoods with the sum of venues by categories. I then multilply this matrix to the user profile matrix (Hadamard product) and sum each row. The row with the highest value represents the neighborhood that theoritically best suits the user's preferences.
+Next step consists of finding the recommendations, which are the best Vancouver neighborhoods based on the user preferences. To do that, I obtained a matrix of Vancouver neighborhoods with the sum of venues by categories. I then multilplied this matrix to the user profile matrix (Hadamard product) and summed each row. The row with the highest value represents the neighborhood that theoritically best suits the user's preferences.
 
 
 # Results
 
-Results section where you discuss the results.
+Given that my favourite Montreal neighborhoods are Le Plateau and Petite-Italie:
+
+the K-Means clustering analysis provided the following recommendations: Chinatown, Downtown Eastside, Gastown, International Village, Victory Square, West End, Marpole and Mount Pleasant.
+
+
+Given my input on neighborhoods where I would live or:
+
+the Content-based recommender provided the following top ten recommendations: South Granville, Chinatown, Granville Mall, Robson, South Main, Gastown, Yaletown, Victory Square, International Village and Commercial Drive.
+
+
+As a summary of recommendations, I decided to recommend only the neighborhoods that were part of both analysis: Chinatown, International Village and Gastown. 
+
+
 # Discussion
 Discussion section where you discuss any observations you noted and any recommendations you can make based on the results.
+Obviously, the two studies above have limitations. 
+
+Based on the methodology, I use a radius of 500 meters to find venues for a given neighborhood. Given that I am looking at central neighborhoods for each city, these ones are closely located which means that some venues are in more than one neighborhoods. The impact of this is that close neighborhoods end up having really similar venue category distribution. An alternate means to find venues would have been to use the actual perimeters of each neighborhoods.
+
+Regarding the content-based recommender, I found that the venue category distributions amongst the neighborhoods did not allow the user inputs to change a lot and have a big impact on the recommendations. This is remarkable by the fact that most neighborhoods have high numbers of food and shop & service related venues.
+
+Given the limitations above, I found that the best recommendation possible was to recommend neighborhoods that were provided by both analysis.
+
 # Conclusion
-Conclusion section where you conclude the report.
+
+A lot of variables can influence the feelings a neighborhood provides to its inhabitants. Moving to a new city without knowing it makes choosing a new neighborhood very difficult. That is why I did my project on identifying Vancouver's neighborhoods that ressemble my favourites neighborhood in my city, Montreal. 
+
+Next time I go to Vancouver, I will defitinely visit Chinatown, International Village and Gastown and try to see if my hypothesis work!
 
