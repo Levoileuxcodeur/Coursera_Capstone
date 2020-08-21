@@ -1,21 +1,19 @@
 # Coursera_Capstone
 # Introduction
-Introduction where you discuss the business problem and who would be interested in this project.
 
 When moving to a new city, it is difficult to identify which neighborhood suits our needs without already having spent some time in the city.
 
-Therefore, I want to create a tool that will allow users to identify what they like in their current neighborhood and find similar neighborhoods in an other city of their choice.
+Therefore, I created a tool that will allow users to identify what they like in their current neighborhood and find similar neighborhoods in an other city of their choice.
 
-Typical factors will be amount of: Arts & Entertainment, Food shop, Shop and Service, Outdoor & Recreation & Nightlife Spot. (Those categories are Foursquare top-level categories)
+Typical factors will be amount of venues of different categories: Arts & Entertainment, Food shop, Shop and Service, Outdoor & Recreation & Nightlife Spot. (Those categories are Foursquare top-level categories)
 
 This idea is based on my dream to one day move from where I live to another city and be able to find a neighborhood that match my lifestyle.
 
 # Data
-Data where you describe the data that will be used to solve the problem and the source of the data.
 
-For this study, I am comparing Montreal and Vancouver, two canadian cities.
+For this study, I am compared Montreal and Vancouver, two canadian cities.
 
-I use the following sources to gather data:  
+I used the following sources to gather data:  
 
 - Several internet pages regarding neighbordhood description
   - Montreal: https://habitermontreal.com/en/discover-the-neighbourhoods
@@ -26,9 +24,9 @@ I use the following sources to gather data:
   - https://developer.foursquare.com/docs/build-with-foursquare/categories/
 
 
-Starting with the neighborhoods names, I find their latitude and longitude using the Nominatim geolocator API.
-I then plot the neighborhoods on maps using Folium to ensure the accuracy of their position. I correct several neighborhoods center position manually in my dataset. 
-For each neighboroods, I then acquire all venues within a 500 meters radius of their center using the Foursquare Search Venues API. I finally change each venue category to fit within the five top categories defined by Foursquare: Arts & Entertainment, Food shop, Shop and Service, Outdoor & Recreation & Nightlife Spot.
+Starting with the neighborhoods names, I found their latitude and longitude using the Nominatim geolocator API.
+I then plotted the neighborhoods on maps using Folium to ensure the accuracy of their position. I corrected several neighborhoods center position manually in my dataset. 
+For each neighboroods, I then acquired all venues within a 500 meters radius of their center using the Foursquare Search Venues API. I finally changed each venue category to fit within the five top categories defined by Foursquare: Arts & Entertainment, Food shop, Shop and Service, Outdoor & Recreation & Nightlife Spot.
 
 # Methodology
 
